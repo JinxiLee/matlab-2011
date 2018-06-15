@@ -51,7 +51,7 @@ Spectrum_New(Frequency_New<Min_Frequency)=0;
 Spectrum_New((N_f+1):N_t)=0;
 
 Time_total=1/(Max_Frequency/(N_f-1));
-Time=[0:Time_total/(N_t-1):Time_total]/2;%/2¬O¦]¬°¤@¨Ó¤@¦^
+Time=[0:Time_total/(N_t-1):Time_total]/2;%/2æ˜¯å› ç‚ºä¸€ä¾†ä¸€å›ž
 Time=Time';
 Position=C*Time;
 Position_micron=Position*1E6;
@@ -160,7 +160,7 @@ A_exp_diff(isnan(A_exp_diff))=0;
 c=3E8;
 Frequency_Final_total=c/abs(2*(Position(2)-Position(1)));
 
-Frequency_Final=[0:Frequency_Final_total/(length(Signal)-1):Frequency_Final_total];%/2¬O¦]¬°¤@¨Ó¤@¦^
+Frequency_Final=[0:Frequency_Final_total/(length(Signal)-1):Frequency_Final_total];%/2æ˜¯å› ç‚ºä¸€ä¾†ä¸€å›ž
 Frequency_Final=Frequency_Final';
 Wavelength_Final=c./Frequency_Final;
 
@@ -231,7 +231,7 @@ for q=1:length(n_should)
         t1_r=2*(n_temp+i*k_temp)./(n_temp+n1(index_now)+i*k_temp);
         r1=(n1(index_now)-(n_temp+i*k_temp))./(n_temp+n1(index_now)+i*k_temp);
         r2=((n_temp+i*k_temp)-n2)./((n_temp+i*k_temp)+n2);    
-        d=exp(i*2*pi.*Frequency_Final(index_now)/c.*(n_temp+i*k_temp).*thickness_temp);   %ª`·N! -1*n!
+        d=exp(i*2*pi.*Frequency_Final(index_now)/c.*(n_temp+i*k_temp).*thickness_temp);   %æ³¨æ„! -1*n!
         A_temp=(d.^2).*t1.*t1_r.*r2./r1;
         A_temp_abs=abs(A_temp);
         A_temp_phase=angle(A_temp);
@@ -289,7 +289,7 @@ t1_check=2*(n1)./(n_final+n1+i*k_final);
 t1_r_check=2*(n_final+i*k_final)./(n_final+n1+i*k_final);
 r1_check=(n1-(n_final+i*k_final))./(n_final+n1+i*k_final);
 r2_check=((n_final+i*k_final)-n2)./((n_final+i*k_final)+n2);    
-d_check=exp(i*2*pi.*Frequency_Final/c.*(n_final+i*k_final).*thickness_temp);   %ª`·N! -1*n!
+d_check=exp(i*2*pi.*Frequency_Final/c.*(n_final+i*k_final).*thickness_temp);   %æ³¨æ„! -1*n!
 A_check=(d_check.^2).*t1_check.*t1_r_check.*r2_check./r1_check;
 
 clear A_diff
